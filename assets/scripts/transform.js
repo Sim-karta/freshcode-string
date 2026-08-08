@@ -1,9 +1,18 @@
+const transformArea = document.querySelector(".tranform");
+const transformBtn = transformArea.querySelector(".transform-btn");
+
 const citiesStr = "Київ, Львів, Одеса, Харків";
 
-const citiesArr = citiesStr.split(", ");
+function transformData(str) {
+    const arr = str.split(", ");
 
-citiesArr.push("Дніпро");
+    arr.push("Дніпро");
 
-const newCitiesStr = citiesArr.join(" - ");
+    return arr.join(" - ");
+}
 
-console.dir(newCitiesStr);
+transformBtn.addEventListener("click", () => {
+    const newCitiesStr = transformData(citiesStr);
+    console.log("Початкові дані: ", citiesStr);
+    console.log("Змінені дані: ", newCitiesStr);
+});
