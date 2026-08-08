@@ -1,3 +1,6 @@
+const moderatorArea = document.querySelector(".moderator");
+const moderationBtn = moderatorArea.querySelector(".moderation-btn");
+
 function censorFirstLetter(text) {
     const wordsArray = text.split(" ");
 
@@ -8,8 +11,14 @@ function censorFirstLetter(text) {
     return moderatedText.join(" ");
 }
 
-console.log(
-    censorFirstLetter(
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, ullam!",
-    ),
-);
+moderationBtn.addEventListener("click", () => {
+    let text = prompt(
+        'Введіть текст, який хочете відправити модератору\n(Або натисніть "відміна" для використання тексту за замовченням)',
+    );
+
+    text = text
+        ? text
+        : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, ullam!";
+
+    console.log(censorFirstLetter(text));
+});
