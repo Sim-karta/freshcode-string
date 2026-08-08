@@ -1,3 +1,7 @@
+const filterArea = document.querySelector(".filter");
+const printFileNamesBtn = filterArea.querySelector(".print-fileNames-btn");
+const printPublicPagesBtn = filterArea.querySelector(".print-public-pages-btn");
+
 const fileNames = [
     "index.html",
     "styles.css",
@@ -20,4 +24,10 @@ const publicPages = fileNames.filter((fileName) => {
     return fileName.endsWith(".html");
 });
 
-console.dir(publicPages);
+printFileNamesBtn.addEventListener("click", () => {
+    console.dir(fileNames);
+});
+
+printPublicPagesBtn.addEventListener("click", () => {
+    console.dir(publicPages);
+});
