@@ -2,4 +2,8 @@ const citiesStr = "Київ, Львів, Одеса, Харків";
 
 const citiesArr = citiesStr.split(", ");
 
-console.dir(citiesArr);
+citiesArr.push("Дніпро");
+
+const newCitiesStr = citiesArr.join(" - ");
+
+console.dir(newCitiesStr);
